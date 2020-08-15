@@ -1,6 +1,17 @@
 const HEIGHT = 6
 const WIDTH = 7
 
+var worker = new Worker('grunt.js');
+worker.onmessage = (e) => {
+    console.log(`I should be making this move ${e.data.move} and the score is ${e.data.score}`)
+    
+    markCol(e.data.move, 1)
+    state += e.data.move.toString()
+    setCounter(e.data.score - state.length)
+
+    imThinkingLeaveMeAlone = false
+}
+
 //players are 1 and 2
 const PLAYERS = [1, 2]
 const VALUES = [1, 2]
@@ -11,40 +22,38 @@ var imThinkingLeaveMeAlone = false
 var board
 var state = ""
 
+var markCol = function( x, player) {
+    for (let i = 0; i < HEIGHT; i++) {
+        // everytime I have to write three equal signs I want to scream
+        if (board[x][i].value === 0) {
+            console.log(`found an empty ${JSON.stringify(board[x][i])} as ${x}${i}`)
+            board[x][i].value = player === PLAYERS[0] ? VALUES[0] : VALUES[1]
+            board[x][i].element.classList.add(player === PLAYERS[0] ? COLORS[0] : COLORS[1])
+            madeMove = i
+            return true
+        }
+    }
+    return false
+}
+
 var playCol = function (x, player) {
     return function () {
         if (imThinkingLeaveMeAlone) {
             return
         }
-        //imThinkingLeaveMeAlone = true
-        state += x.toString()
-        console.log(state)
 
         console.log("inside play col")
-        let madeMove = -1
-        for (let i = 0; i < HEIGHT; i++) {
-            // everytime I have to write three equal signs I want to scream
-            if (board[x][i].value === 0) {
-                console.log(`found an empty ${JSON.stringify(board[x][i])} as ${x}${i}`)
-                board[x][i].value = player === PLAYERS[0] ? VALUES[0] : VALUES[1]
-                board[x][i].element.classList.add(player === PLAYERS[0] ? COLORS[0] : COLORS[1])
-                madeMove = i
-                break
-            }
-        }
-        if (madeMove >= 0) {
+        if (markCol(x, player)) {
             imThinkingLeaveMeAlone = true;
             state+= x.toString()
-            //self.postMessage(state)
+            //worker.postMessage(state)
+            setTimeout(function(){ worker.postMessage(state); }, 500);
         }
-
-
-        //self.postMessage()
     }
 }
 
 var setCounter = function(value) {
-    document.getElementById("counter").textContent = "5"
+    document.getElementById("counter").textContent = value.toString()
 }
 
 var initializeGame = function () {
@@ -73,5 +82,4 @@ var initializeGame = function () {
 
 
 initializeGame()
-playCol(1, 2)
-setCounter(5)
+markCol(3, 1)
