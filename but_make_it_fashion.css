@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Virgil";
+    src: url("https://excalidraw.com/FG_Virgil.woff2");
+  }
+  .svg {
+      font-family: 'Spartan';
+  }
+
+h1 {
+    color: black;
+    font-size: 7em;
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flexbox;
+    text-align:center; width: 100%; 
+    font-size: 1.75em;
+    margin-top: 1em;
+}
+
+#title_block {
+    margin-bottom: 8em;
+    display: block;
+}
+
+#connect_4 {
+    display: block;
+}
+
+#primary {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+#secondary {
+    font-size: 1.25em;
+}
+
+div {
+    text-align: center;
+}
+
+a {
+    color: black; text-decoration: none;
+    display: inline-block;
+    padding: 0.5em;
+}
+
+#board {
+    width: 35vw;
+    height: 30vw;
+    display: grid;
+    grid-template-rows:    repeat(6, 1fr);
+    grid-template-columns:    repeat(7, 1fr);
+    margin: 0 auto;
+}
+
+#connect_4 {
+    width: 70vw;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+#connect_4_text {
+    margin-bottom: 2em;
+}
+
+#connect_4_text * {
+    text-align: justify;
+  text-justify: inter-word;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.stone {
+    margin: 0.5em;
+    display: block;
+    border: solid #000;
+    border-width: 0.1em;
+border-radius: 50%;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+a, h1, #counter {
+    font-family: 'Bungee Hairline', 'Courier New', monospace;
+    font-weight: bold;
+
+}
+
+#counter {
+    font-size: 3em;
+    text-align: center;
+}
+
+span, p {
+    font-family: 'Spartan', 'Segoe UI', sans-serif;
+}
+
+svg {
+    margin-top: 3em;
+}
