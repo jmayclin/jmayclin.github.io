@@ -70,8 +70,7 @@ a {
 }
 
 #connect_4_text * {
-    text-align: justify;
-  text-justify: inter-word;
+    text-align: center;
     margin-top: 0em;
     margin-bottom: 0em;
     width: 50%;
