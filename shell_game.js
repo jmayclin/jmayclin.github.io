@@ -45,7 +45,7 @@ var playCol = function (x, player) {
         console.log("inside play col")
         if (markCol(x, player)) {
             imThinkingLeaveMeAlone = true;
-            state+= x.toString()
+            state+= (x + 1).toString()
             //worker.postMessage(state)
             setTimeout(function(){ worker.postMessage(state); }, 500);
         }
@@ -83,3 +83,4 @@ var initializeGame = function () {
 
 initializeGame()
 markCol(3, 1)
+state += 4;
