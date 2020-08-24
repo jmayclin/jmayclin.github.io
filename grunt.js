@@ -1,7 +1,29 @@
-console.log("I'm alive")
+
+/*import("./pkg").then(wasm => {
+    wasm.init();
+    console.log("loading")
+    self.addEventListener("message", ev => {
+      const num = Number(ev.data);
+      if (!num) {
+        self.postMessage({ allGood: false, error: ev.data + "is not a number!" });
+        return;
+      }
+      try {
+        const isPrime = wasm.is_prime(num);
+        self.postMessage({ allGood: true, isPrime: isPrime });
+      } catch (err) {
+        self.postMessage({ allGood: false, error: err.message });
+      }
+    });
+  }); */
+  console.log("I am the web worker")
+/*
 importScripts("minutes_of_study.js")
-console.log("imported it")
-console.log(minutes_of_study)
+importScripts("pkg/thimblerigger.js")
+//console.log(minutes_of_study)
+
+//await init()
+
 onmessage = (e) => {
     console.log('i received it. yay')
     console.log(`The game state is ${e.data}`)
@@ -18,3 +40,4 @@ onmessage = (e) => {
         })
     }
 }
+*/

@@ -1,7 +1,7 @@
 const HEIGHT = 6
 const WIDTH = 7
 
-var worker = new Worker('grunt.js');
+var worker = new Worker('thimble.js', {type: "module"});
 worker.onmessage = (e) => {
     console.log(`I should be making this move ${e.data.move} and the score is ${e.data.score}`)
     

@@ -1,0 +1,15 @@
+{
+  "name": "thimblerigger",
+  "collaborators": [
+    "James Mayclin <29185101+jmayclin@users.noreply.github.com>"
+  ],
+  "version": "1.31.0",
+  "files": [
+    "thimblerigger_bg.wasm",
+    "thimblerigger.js",
+    "thimblerigger.d.ts"
+  ],
+  "module": "thimblerigger.js",
+  "types": "thimblerigger.d.ts",
+  "sideEffects": false
+}
