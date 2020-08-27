@@ -1,3 +1,4 @@
 rm -rf pkg/
-wasm-pack build --target no-module ../thimblerigger/ 
+rm -rf ../thimblerigger/pkg
+wasm-pack build --target no-modules ../thimblerigger/ 
 cp -r ../thimblerigger/pkg .

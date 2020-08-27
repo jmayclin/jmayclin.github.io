@@ -9,7 +9,6 @@
     "thimblerigger.js",
     "thimblerigger.d.ts"
   ],
-  "module": "thimblerigger.js",
-  "types": "thimblerigger.d.ts",
-  "sideEffects": false
+  "browser": "thimblerigger.js",
+  "types": "thimblerigger.d.ts"
 }

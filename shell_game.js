@@ -1,7 +1,8 @@
 const HEIGHT = 6
 const WIDTH = 7
 
-var worker = new Worker('thimble.js', {type: "module"});
+console.log("creating web worker")
+var worker = new Worker('no_module_worker.js');
 worker.onmessage = (e) => {
     console.log(`I should be making this move ${e.data.move} and the score is ${e.data.score}`)
     
@@ -77,7 +78,7 @@ var initializeGame = function () {
         //stone.classList.add("red")
         count++
     }
-    console.log(count)
+    console.log(`initial count is ${count}`)
 }
 
 
