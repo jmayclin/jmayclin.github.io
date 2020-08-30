@@ -74,16 +74,16 @@ a {
   text-justify: inter-word;
     margin-top: 0em;
     margin-bottom: 0em;
-    width: 50%;
     margin: 0 auto;
 }
 
 .stone {
+    transition: background-color 0.5s ease;
     margin: 0.5em;
     display: block;
     border: solid #000;
     border-width: 0.1em;
-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .red {
