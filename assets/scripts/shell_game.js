@@ -2,7 +2,7 @@ const HEIGHT = 6
 const WIDTH = 7
 
 console.log("creating web worker")
-var worker = new Worker('no_module_worker.js');
+var worker = new Worker('assets/scripts/thimble.js');
 worker.onmessage = (e) => {
     console.log(`[main] move ${e.data.move} and the score is ${e.data.score}`)
     

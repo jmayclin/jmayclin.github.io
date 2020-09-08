@@ -1,11 +1,11 @@
 console.log("inside web worker")
 //import init from './pkg/thimblerigger.js';
 // must be compiled with web option
-importScripts('./pkg/thimblerigger.js')
-importScripts('minutes_of_study.js')
+importScripts('/assets/pkg/thimblerigger.js')
+importScripts('/assets/scripts/minutes_of_study.js')
 const {add, do_the_magic} = wasm_bindgen
 async function run() {
-    await wasm_bindgen('./pkg/thimblerigger_bg.wasm')
+    await wasm_bindgen('/assets/pkg/thimblerigger_bg.wasm')
     console.log("It seems to have loaded?")
     console.log(`the result of 4 + 24 is ${add(4, 24)}`)
     console.log(`the best action for a state is ${do_the_magic("12345671234567")}`)

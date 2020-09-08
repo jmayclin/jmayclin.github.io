@@ -1,11 +1,8 @@
-@font-face {
-    font-family: "Virgil";
-    src: url("https://excalidraw.com/FG_Virgil.woff2");
-  }
-  .svg {
-      font-family: 'Spartan';
-  }
 
+h2 {
+    font-family:  'Bungee Hairline', 'Courier New', monospace;
+    font-weight: bold;
+}
 h1 {
     color: black;
     font-size: 7em;
@@ -13,6 +10,8 @@ h1 {
     margin-top: 1.5em;
     margin-bottom: 0em;
 }
+
+
 
 nav {
     display: flexbox;
